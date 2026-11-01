@@ -1,5 +1,4 @@
-// Sá ikki heilt hvat stóð á myndini, so hetta er møguliga skeivt
-import * as housesRepository from "../repos/house.repo"
+import * as housesRepository from "../repos/house.repo.js"
 
 
 export const getAllHouses = async (req, res) => {
@@ -12,9 +11,11 @@ export const getAllHouses = async (req, res) => {
       });
     }
     res.status(200).json(allHouses);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error", code: err.code });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ 
+      error: "Database error",
+    });
   }
 }
 
@@ -28,8 +29,10 @@ export async function getSingleHouse(req, res) {
       } else {
         res.sendStatus(404);
       }
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Database error", code: err.code });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ 
+        error: "Database error",
+      });
     }
 }

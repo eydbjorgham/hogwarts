@@ -1,30 +1,20 @@
 import express from "express";
 import { pool } from "./db.js";
 
-import * as housesController from "./controllers/houses.controller.js"
+import housesRouter from "./routers/houses.router.js";
+import studentsRouter from "./routers/student.router.js";
+import teachersRouter from "./routers/teacher.router.js";
+import coursesRouter from "./routers/course.router.js";
+
 const app = express();
 app.use(express.json());
+
+// Routers
+app.use(housesRouter);
+app.use(studentsRouter);
+app.use(teachersRouter);
+app.use(coursesRouter);
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-
-//---------------------------------------------------------------------------------------------------------------
-//*  Houses Data
-//---------------------------------------------------------------------------------------------------------------
-
-app.get("/houses", housesController.getAllHouses);
-
-// Get single house
-app.get("/houses/:id", housesController.getSingleHouse);
-
-//---------------------------------------------------------------------------------------------------------------
-//*  Student Data
-//---------------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------------------------------------------
-//*  Teacher Data
-//---------------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------------------------------------------
-//*  Course Data
-//---------------------------------------------------------------------------------------------------------------
