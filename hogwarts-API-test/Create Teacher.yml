@@ -1,0 +1,22 @@
+info:
+  name: Create Teacher
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: http://localhost:3000/teacher
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Albus Dumbledore",
+        "house": "Gryffindor"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
