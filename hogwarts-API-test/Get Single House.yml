@@ -5,11 +5,7 @@ info:
 
 http:
   method: GET
-  url: http://localhost:3000/houses/:id
-  params:
-    - name: id
-      value: ""
-      type: path
+  url: http://localhost:3000/houses/Slythering
   auth: inherit
 
 settings:

@@ -4,10 +4,10 @@ import { getAllTeachers, getSingleTeacher, createTeacher, updateTeacher, deleteT
 
 const router = express.Router();
 
-router.get("/teacher", getAllTeachers);
-router.get("/teacher/:id", getSingleTeacher);
-router.post("/teacher", createTeacher);
-router.put("/teacher/:id", updateTeacher);
-router.delete("/teacher/:id", deleteTeacher);
+router.get("/teachers", getAllTeachers);
+router.get("/teachers/:id", getSingleTeacher);
+router.post("/teachers", createTeacher);
+router.put("/teachers/:id", updateTeacher);
+router.delete("/teachers/:id", deleteTeacher);
 
 export default router;
