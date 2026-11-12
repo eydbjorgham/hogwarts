@@ -29,6 +29,16 @@ export async function deleteCourse(id) {
   return result.rowCount;
 }
 
+export async function getCourseByName(name) {
+  const result = await pool.query("SELECT * FROM courses WHERE name = $1", [name]);
+
+  if (result.rowCount === 0) {
+    return null;
+  } else {
+    return result.rows[0];
+  }
+}
+
 export async function addStudentToCourse(courseId, studentId) {
   const result = await pool.query("INSERT INTO courses_students (course_id, student_id) VALUES ($1, $2)", [courseId, studentId]);
   return result.rowCount;

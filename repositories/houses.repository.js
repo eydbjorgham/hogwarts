@@ -5,7 +5,7 @@ export async function getAllHouses() {
     return result.rows;
 }
 
-// Get single house
+
 export async function getHouseById(id) {
     const one = await pool.query("SELECT * FROM houses WHERE id = $1", [id])
 
